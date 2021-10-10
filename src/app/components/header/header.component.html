@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <div class="col-9">
+        <button [routerLink]="['/cliente']" routerLinkActive="router-link-active" class="btn btn-outline-primary">
+          Nuevo Cliente
+        </button>
+      </div>
+      <div class="col-2">
+        <input class="form-control me-2" type="search" name="value" placeholder="Buscar cliente" aria-label="Search" [(ngModel)]="value">
+      </div>
+      <div class="col">
+        <button class="btn btn-outline-primary pull-right" type="button" (click)="buscar()">Búsqueda</button>
+      </div>     
+    </div>
+</nav>

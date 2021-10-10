@@ -1,0 +1,87 @@
+<div class="limiter animated fadeInRight">
+    <div class="container-login100">        
+    
+        <div class="wrap-login100 p-t-50 p-b-90">
+
+            <span class="login100-form-title p-b-25">
+                NUEVO CLIENTE
+            </span>
+            
+            <form autocomplete="off" [formGroup]="formulario" (ngSubmit)="guardar()">
+                <div class="form-group row m-b-16">
+                    <div class="col-md-12">
+                        <label for="descripcion">
+                            ID:
+                        </label>                                        
+                        <input type="text" class="form-control" formControlName="id" readonly>
+                    </div> 
+                </div>
+    
+                <div class="form-group row m-b-16">
+                    <div class="col-md-12">
+                        <label for="descripcion">
+                            Nombre: <span class="text-danger">*</span>
+                        </label>                                        
+                        <input type="text" class="form-control" formControlName="nombre" [class.is-invalid]="nombreNoValido">
+                        <small *ngIf="nombreNoValido" class="text-danger">El nombre no cumple con las validaciones requeridas</small>
+                    </div> 
+                </div>
+    
+                <div class="form-group row m-b-16">
+                    <div class="col-md-12">
+                        <label for="descripcion">
+                            Apellido Paterno: <span class="text-danger">*</span>
+                        </label>                                        
+                        <input type="text" class="form-control" formControlName="apellidoPaterno" [class.is-invalid]="apellidoPaternoNoValido">
+                        <small *ngIf="apellidoPaternoNoValido" class="text-danger">El apellido paterno no cumple con las validaciones requeridas</small>
+                    </div> 
+                </div>
+    
+                <div class="form-group row m-b-16">
+                    <div class="col-md-12">
+                        <label for="descripcion">
+                            Apellido Materno:
+                        </label>                                        
+                        <input type="text" class="form-control" formControlName="apellidoMaterno" [class.is-invalid]="apellidoMaternoNoValido">
+                        <small *ngIf="apellidoMaternoNoValido" class="text-danger">El apellido materno no cumple con las validaciones requeridas</small>
+                    </div> 
+                </div>           
+    
+                <div class="form-group row m-b-16">
+                    <div class="col-md-12">
+                        <label for="descripcion">
+                            Fecha de Nacimiento: <span class="text-danger">*</span>
+                        </label>                                        
+                        <input type="date" class="form-control" formControlName="fechaNacimiento" [class.is-invalid]="fechaNacimientoNoValida">
+                        <small *ngIf="fechaNacimientoNoValida" class="text-danger">La fecha de nacimiento no cumple con las validaciones requeridas</small>
+                    </div> 
+                </div>
+    
+                <div class="form-group row m-b-16">
+                    <div class="col-md-12">
+                        <label for="descripcion">
+                            Ingresos:
+                        </label>                                        
+                        <input type="number" class="form-control" formControlName="ingresos" [class.is-invalid]="ingresosNoValidos">
+                        <small *ngIf="ingresosNoValidos" class="text-danger">Los ingresos no cumplen con las validaciones requeridas</small>
+                    </div> 
+                </div>
+    
+                <div class="form-group row m-b-16">
+                    <div class="col-md-12">
+                        <label for="descripcion">
+                            Código Postal: <span class="text-danger">*</span>
+                        </label>                                        
+                        <input type="text" class="form-control" formControlName="codigoPostal" [class.is-invalid]="codigoPostalNoValido" maxlength="5">
+                        <small *ngIf="codigoPostalNoValido" class="text-danger">El código postal no cumple con las validaciones requeridas</small>
+                    </div> 
+                </div>
+    
+                <div class="form-group col pull-right">
+                    <button type="submit" class="btn btn-outline-primary">Guardar</button>
+                    <button type="button" class="btn btn-outline-danger" [routerLink]="['/,clientes']" routerLinkActive="router-link-active" >Cancelar</button>              
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
